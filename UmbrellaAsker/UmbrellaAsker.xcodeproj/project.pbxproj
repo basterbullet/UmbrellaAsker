@@ -29,6 +29,8 @@
 		E0F3F7AA192D88C300340159 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F3F78C192D88C300340159 /* UIKit.framework */; };
 		E0F3F7B2192D88C300340159 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0F3F7B0192D88C300340159 /* InfoPlist.strings */; };
 		E0F3F7B4192D88C300340159 /* UmbrellaAskerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F3F7B3192D88C300340159 /* UmbrellaAskerTests.m */; };
+		E4058FC11933502800D10FD2 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4058FC01933502800D10FD2 /* TimeManager.m */; };
+		E4A7AB391931DF4000AD94A4 /* iconme.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A7AB381931DF4000AD94A4 /* iconme.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,9 @@
 		E0F3F7B1192D88C300340159 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E0F3F7B3192D88C300340159 /* UmbrellaAskerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UmbrellaAskerTests.m; sourceTree = "<group>"; };
 		E17A0A79F76744B6AFC2C75B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4058FBF1933502800D10FD2 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
+		E4058FC01933502800D10FD2 /* TimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
+		E4A7AB381931DF4000AD94A4 /* iconme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconme.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +157,8 @@
 				E064D2FC192DFCCF000D6D9D /* LocationViewController.m */,
 				E064D2FE192DFCE4000D6D9D /* SetTimeViewController.h */,
 				E064D2FF192DFCE4000D6D9D /* SetTimeViewController.m */,
+				E4058FBF1933502800D10FD2 /* TimeManager.h */,
+				E4058FC01933502800D10FD2 /* TimeManager.m */,
 				E064D301192DFD07000D6D9D /* MainViewController.h */,
 				E064D302192DFD07000D6D9D /* MainViewController.m */,
 				E0F3F79D192D88C300340159 /* ViewController.h */,
@@ -167,6 +174,7 @@
 		E0F3F78F192D88C300340159 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E4A7AB381931DF4000AD94A4 /* iconme.png */,
 				E0F3F790192D88C300340159 /* UmbrellaAsker-Info.plist */,
 				E0F3F791192D88C300340159 /* InfoPlist.strings */,
 				E0F3F794192D88C300340159 /* main.m */,
@@ -271,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A7AB391931DF4000AD94A4 /* iconme.png in Resources */,
 				E0F3F7A1192D88C300340159 /* Images.xcassets in Resources */,
 				E0F3F793192D88C300340159 /* InfoPlist.strings in Resources */,
 				E0F3F79C192D88C300340159 /* Main.storyboard in Resources */,
@@ -333,6 +342,7 @@
 				E064D303192DFD07000D6D9D /* MainViewController.m in Sources */,
 				E064D306192DFD55000D6D9D /* LocationManage.m in Sources */,
 				E0F3F795192D88C300340159 /* main.m in Sources */,
+				E4058FC11933502800D10FD2 /* TimeManager.m in Sources */,
 				E064D2FD192DFCCF000D6D9D /* LocationViewController.m in Sources */,
 				E064D30C192DFD73000D6D9D /* NotificationManage.m in Sources */,
 			);
