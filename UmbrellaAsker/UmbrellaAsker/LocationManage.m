@@ -9,5 +9,18 @@
 #import "LocationManage.h"
 
 @implementation LocationManage
+/*
+-(int) saveToUserLatLon:(NSString*)VALUE Tag:(int)TAG{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:TIME forKey:[[NSNumber numberWithUnsignedInt:TAG] stringValue]];
+    return 0;
+}
 
+-(NSString *) loadFromUserDefaultsTag:(int)TAG{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *localNSString = [userDefaults stringForKey:[[NSNumber numberWithUnsignedInt:TAG] stringValue]];
+    
+    return localNSString;
+}
+*/
 @end

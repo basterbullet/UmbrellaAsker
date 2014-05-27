@@ -8,7 +8,12 @@
 
 //#import "ViewController.h"
 #import <UIKit/UIKit.h>
+#import "Weather.h"
 
 @interface MainViewController : UIViewController
+{
+    IBOutlet UIButton *testBtn;
+}
 
+- (IBAction)testBtnClicked:(id)sender;
 @end

@@ -84,6 +84,8 @@
                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                              NSLog(@"Error: %@", error);
                                          }];
+
+    [self.view bringSubviewToFront:testBtn];
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,4 +94,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)testBtnClicked:(id)sender {
+    Weather *localWeatherManager = [[Weather alloc] init];
+    [localWeatherManager getWeatherFromLatLon];
+}
 @end
