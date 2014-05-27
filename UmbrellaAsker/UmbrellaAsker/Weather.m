@@ -36,27 +36,32 @@
                                              NSLog(@"Error: %@", error);
                                          }];
      */
-    [[AFHTTPRequestOperationManager manager] GET:urlStringForecast1day
-                                      parameters:nil
-                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                             NSLog(@"JSON: %@", responseObject);
-                                             NSLog(@"Json catched");
+    NSDictionary *test;
+    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
 
-                                             //NSData *jsonData = [responseObject dataUsingEncoding:NSUnicodeStringEncoding];
-                                             NSLog(@"Encode checked");
-//                                             NSError *error;
-//                                             NSArray *array = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments                                                                                              error:&error];
-//                                             NSLog(@"JSON Serialized");
-                                             //NSString *test = [array objectAtIndex:2];
-                                             //NSLog(@"%@",test);
+    [[AFHTTPRequestOperationManager manager] GET:urlStringForecast1day
+                                         parameters:test
+                                         success:^(AFHTTPRequestOperation *operation, id responseObject)
+                                         {
+                                             NSLog(@"JSON: %@", responseObject);
+                                             NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:nil];
+                                             //test = [jsonDictionary objectForKey:@"list"];
+                                             
+                                             NSLog(@"%@",[jsonDictionary objectForKey:@"list"]);
+                                             NSLog(@"====================");
                                          }
                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                              NSLog(@"Error: %@", error);
                                          }];
-
+    NSLog(@"%@",test);
+    
+ 
 }
-
-
+/*
+- (void) test
+{
+}
+*/
 
 
 

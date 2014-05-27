@@ -11,6 +11,8 @@
 #import <AFNetworking/AFNetworking.h>
 
 @interface Weather : NSObject
+{
+}
 
 - (void) getWeatherFromLatLon;
 @end
