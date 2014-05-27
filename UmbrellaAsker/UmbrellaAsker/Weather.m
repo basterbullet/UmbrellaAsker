@@ -17,14 +17,15 @@
 
 - (void) getWeatherFromLatLon{
     // OpenWeatherMapの天気出力APIエンドポイント
-    NSString *kOpenWeatherMap3HoursForecastAPI = @"http://api.openweathermap.org/data/2.5/weather?units=metric&lat=%f&lon=%f";
     NSString *apiURLfromOpenWeatherMapForecast = @"http://api.openweathermap.org/data/2.5/forecast/daily?lat=%f&lon=%f&cnt=%d&mode=json";
     
     // 適当な緯度経度AF
-    CLLocationDegrees latitude = 39.01;
-    CLLocationDegrees longitude = 141.68;
+    NSUserDefaults *locationUserDefaults = [NSUserDefaults standardUserDefaults];
+    float latitude  = [locationUserDefaults floatForKey:@"latitude"];
+    float longitude = [locationUserDefaults floatForKey:@"longitude"];
+//    CLLocationDegrees latitude = 39.01;
+//    CLLocationDegrees longitude = 141.68;
     
-    NSString *urlString = [NSString stringWithFormat:kOpenWeatherMap3HoursForecastAPI, latitude, longitude];
     NSString *urlStringForecast1day = [NSString stringWithFormat:apiURLfromOpenWeatherMapForecast,latitude, longitude , 1];
     /*
     [[AFHTTPRequestOperationManager manager] GET:urlString
@@ -37,25 +38,32 @@
                                          }];
      */
     NSDictionary *test;
-    AFHTTPRequestOperationManager* manager = [AFHTTPRequestOperationManager manager];
-
     [[AFHTTPRequestOperationManager manager] GET:urlStringForecast1day
-                                         parameters:test
+                                      parameters:test
                                          success:^(AFHTTPRequestOperation *operation, id responseObject)
                                          {
                                              NSLog(@"JSON: %@", responseObject);
                                              NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:operation.responseData options:0 error:nil];
                                              //test = [jsonDictionary objectForKey:@"list"];
-                                             
-                                             NSLog(@"%@",[jsonDictionary objectForKey:@"list"]);
+                                             NSLog(@"ほげ%@ほげ",[jsonDictionary objectForKey:@"list"]);
                                              NSLog(@"====================");
+                                             [self setWeather:jsonDictionary];
                                          }
+     
                                          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                              NSLog(@"Error: %@", error);
                                          }];
     NSLog(@"%@",test);
-    
+//    NSLog(@"%@",[jsonDictionary objectForKey:@"list"]);
  
+}
+
+-(void)setWeather:(NSDictionary *)jsonDictionary_ {
+    json = jsonDictionary_;
+}
+
+-(NSDictionary *)getWeatherData {
+    return json;
 }
 /*
 - (void) test

@@ -18,7 +18,9 @@
 
 - (void)viewDidLoad
 {
-    
+    Weather *weahter = [[Weather alloc] init];
+    NSDictionary *basutar = [weahter getWeatherData];
+    NSLog(@"バスターバスターバスターバスター%@バスターバスターバスターバスター",basutar);
     //ウィンドウサイズの取得
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     NSLog(@"width:%f height:%f",windowSize.size.width,windowSize.size.height);

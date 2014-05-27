@@ -12,7 +12,9 @@
 
 @interface Weather : NSObject
 {
+    NSDictionary *json;
 }
 
 - (void) getWeatherFromLatLon;
+-(NSDictionary *)getWeatherData;
 @end

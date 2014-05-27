@@ -42,10 +42,13 @@
           longitude);
     NSUserDefaults *locationUserDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *latitudeStr  = [NSString stringWithFormat:@"%f",latitude];
-    NSString *longitudeStr = [NSString stringWithFormat:@"%f",longitude];
-    [locationUserDefaults setObject:latitudeStr forKey:@"latitude"];
-    [locationUserDefaults setObject:longitudeStr forKey:@"longitude"];
+    [locationUserDefaults setFloat:latitude forKey:@"latitude"];
+    [locationUserDefaults setFloat:longitude forKey:@"longitude"];
+    
+//    NSString *latitudeStr  = [NSString stringWithFormat:@"%f",latitude];
+//    NSString *longitudeStr = [NSString stringWithFormat:@"%f",longitude];
+//    [locationUserDefaults setObject:latitudeStr forKey:@"latitude"];
+//    [locationUserDefaults setObject:longitudeStr forKey:@"longitude"];
     
 
     
