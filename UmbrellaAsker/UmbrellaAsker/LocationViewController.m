@@ -40,7 +40,15 @@
     NSLog(@"didUpdateToLocation latitude=%f,longitude=%f",
           latitude,
           longitude);
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *locationUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *latitudeStr  = [NSString stringWithFormat:@"%f",latitude];
+    NSString *longitudeStr = [NSString stringWithFormat:@"%f",longitude];
+    [locationUserDefaults setObject:latitudeStr forKey:@"latitude"];
+    [locationUserDefaults setObject:longitudeStr forKey:@"longitude"];
+    
+
+    
 //    [userDefaults setObject:[[[TIME forKey:[[NSNumber numberWithUnsignedInt:TAG] stringValue]];
 
     //    NSLog(@"%@",[locations lastObject]);
