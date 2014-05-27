@@ -10,7 +10,6 @@
 
 @interface TimeManager : NSObject
 
--(int)njikanm;
 -(int) saveToUserDefaultsTime:(NSString*)TIME Tag:(int)TAG;
 -(NSString *) loadTimeFromUserDefaultsTag:(int)TAG;
 
