@@ -13,7 +13,6 @@
 		E064D300192DFCE4000D6D9D /* SetTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D2FF192DFCE4000D6D9D /* SetTimeViewController.m */; };
 		E064D303192DFD07000D6D9D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D302192DFD07000D6D9D /* MainViewController.m */; };
 		E064D306192DFD55000D6D9D /* LocationManage.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D305192DFD55000D6D9D /* LocationManage.m */; };
-		E064D309192DFD63000D6D9D /* TimeManage.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D308192DFD63000D6D9D /* TimeManage.m */; };
 		E064D30C192DFD73000D6D9D /* NotificationManage.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D30B192DFD73000D6D9D /* NotificationManage.m */; };
 		E0F3F789192D88C300340159 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F3F788192D88C300340159 /* Foundation.framework */; };
 		E0F3F78B192D88C300340159 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F3F78A192D88C300340159 /* CoreGraphics.framework */; };
@@ -30,6 +29,10 @@
 		E0F3F7B2192D88C300340159 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0F3F7B0192D88C300340159 /* InfoPlist.strings */; };
 		E0F3F7B4192D88C300340159 /* UmbrellaAskerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F3F7B3192D88C300340159 /* UmbrellaAskerTests.m */; };
 		E4058FC11933502800D10FD2 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4058FC01933502800D10FD2 /* TimeManager.m */; };
+		E46DCA9F193486DD00FAF889 /* rain01.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DCA9B193486DD00FAF889 /* rain01.png */; };
+		E46DCAA0193486DD00FAF889 /* rain02.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DCA9C193486DD00FAF889 /* rain02.png */; };
+		E46DCAA1193486DD00FAF889 /* rain03.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DCA9D193486DD00FAF889 /* rain03.png */; };
+		E46DCAA2193486DD00FAF889 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = E46DCA9E193486DD00FAF889 /* rain.png */; };
 		E4A7AB391931DF4000AD94A4 /* iconme.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A7AB381931DF4000AD94A4 /* iconme.png */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +58,6 @@
 		E064D302192DFD07000D6D9D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E064D304192DFD55000D6D9D /* LocationManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManage.h; sourceTree = "<group>"; };
 		E064D305192DFD55000D6D9D /* LocationManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManage.m; sourceTree = "<group>"; };
-		E064D307192DFD63000D6D9D /* TimeManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManage.h; sourceTree = "<group>"; };
-		E064D308192DFD63000D6D9D /* TimeManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManage.m; sourceTree = "<group>"; };
 		E064D30A192DFD73000D6D9D /* NotificationManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationManage.h; sourceTree = "<group>"; };
 		E064D30B192DFD73000D6D9D /* NotificationManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationManage.m; sourceTree = "<group>"; };
 		E0F3F785192D88C300340159 /* UmbrellaAsker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UmbrellaAsker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +82,10 @@
 		E17A0A79F76744B6AFC2C75B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4058FBF1933502800D10FD2 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
 		E4058FC01933502800D10FD2 /* TimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
+		E46DCA9B193486DD00FAF889 /* rain01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain01.png; sourceTree = "<group>"; };
+		E46DCA9C193486DD00FAF889 /* rain02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain02.png; sourceTree = "<group>"; };
+		E46DCA9D193486DD00FAF889 /* rain03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain03.png; sourceTree = "<group>"; };
+		E46DCA9E193486DD00FAF889 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
 		E4A7AB381931DF4000AD94A4 /* iconme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconme.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +117,7 @@
 		E0F3F77C192D88C200340159 = {
 			isa = PBXGroup;
 			children = (
+				E46DCA9A193486CA00FAF889 /* picture */,
 				E0F3F78E192D88C300340159 /* UmbrellaAsker */,
 				E0F3F7AD192D88C300340159 /* UmbrellaAskerTests */,
 				E0F3F787192D88C300340159 /* Frameworks */,
@@ -149,8 +155,6 @@
 				E0F3F79A192D88C300340159 /* Main.storyboard */,
 				E064D304192DFD55000D6D9D /* LocationManage.h */,
 				E064D305192DFD55000D6D9D /* LocationManage.m */,
-				E064D307192DFD63000D6D9D /* TimeManage.h */,
-				E064D308192DFD63000D6D9D /* TimeManage.m */,
 				E064D30A192DFD73000D6D9D /* NotificationManage.h */,
 				E064D30B192DFD73000D6D9D /* NotificationManage.m */,
 				E064D2FB192DFCCF000D6D9D /* LocationViewController.h */,
@@ -199,6 +203,17 @@
 				E0F3F7B0192D88C300340159 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E46DCA9A193486CA00FAF889 /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				E46DCA9B193486DD00FAF889 /* rain01.png */,
+				E46DCA9C193486DD00FAF889 /* rain02.png */,
+				E46DCA9D193486DD00FAF889 /* rain03.png */,
+				E46DCA9E193486DD00FAF889 /* rain.png */,
+			);
+			name = picture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +296,12 @@
 			files = (
 				E4A7AB391931DF4000AD94A4 /* iconme.png in Resources */,
 				E0F3F7A1192D88C300340159 /* Images.xcassets in Resources */,
+				E46DCAA0193486DD00FAF889 /* rain02.png in Resources */,
 				E0F3F793192D88C300340159 /* InfoPlist.strings in Resources */,
 				E0F3F79C192D88C300340159 /* Main.storyboard in Resources */,
+				E46DCAA2193486DD00FAF889 /* rain.png in Resources */,
+				E46DCAA1193486DD00FAF889 /* rain03.png in Resources */,
+				E46DCA9F193486DD00FAF889 /* rain01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +356,6 @@
 				E064D2FA192DF60F000D6D9D /* Weather.m in Sources */,
 				E0F3F79F192D88C300340159 /* ViewController.m in Sources */,
 				E064D300192DFCE4000D6D9D /* SetTimeViewController.m in Sources */,
-				E064D309192DFD63000D6D9D /* TimeManage.m in Sources */,
 				E0F3F799192D88C300340159 /* AppDelegate.m in Sources */,
 				E064D303192DFD07000D6D9D /* MainViewController.m in Sources */,
 				E064D306192DFD55000D6D9D /* LocationManage.m in Sources */,

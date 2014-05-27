@@ -10,12 +10,6 @@
 
 @implementation TimeManager
 
-int njikan=200;
-
--(int)njikanm{
-    return njikan;
-}
-
 -(int) saveToUserDefaultsTime:(NSString*)TIME Tag:(int)TAG{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:TIME forKey:[[NSNumber numberWithUnsignedInt:TAG] stringValue]];

@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+@private LocationViewController *controller;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+-(void)setController:(LocationViewController *)controller_;
 
 @end

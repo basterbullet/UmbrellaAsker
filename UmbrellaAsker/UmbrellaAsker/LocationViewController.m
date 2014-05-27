@@ -7,43 +7,85 @@
 //
 
 #import "LocationViewController.h"
+#import "AppDelegate.h"
 
 @interface LocationViewController ()
 
 @end
 
 @implementation LocationViewController
+@synthesize locationManager;
+@synthesize mapView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+-(void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    locationManager = [[CLLocationManager alloc] init];
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [delegate setController:self];
+    
+    if ([CLLocationManager locationServicesEnabled]) {
+        locationManager.delegate = self;
+        [locationManager startUpdatingLocation];
+    }else {
+        NSLog(@"Locationservices not available.");
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *location = [locations objectAtIndex:0];
+    float latitude  = location.coordinate.latitude;
+    float longitude = location.coordinate.longitude;
+    NSLog(@"didUpdateToLocation latitude=%f,longitude=%f",
+          latitude,
+          longitude);
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults setObject:[[[TIME forKey:[[NSNumber numberWithUnsignedInt:TAG] stringValue]];
+
+    //    NSLog(@"%@",[locations lastObject]);
+    [mapView setCenterCoordinate:[location coordinate]];
+    //    [mapView setRegion:region];
+    MKCoordinateRegion cr = mapView.region;
+    cr.span.latitudeDelta = 0.5;
+    cr.span.longitudeDelta = 0.5;
+    [mapView setRegion:cr animated:NO];
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"測位失敗 or 位置情報利用不許可");
+}
+
+-(void)onResume {
+    //    locationManager = nil;
+    if (nil == locationManager && [CLLocationManager locationServicesEnabled]) {
+        [locationManager startUpdatingLocation];
+    }
+}
+
+-(void)onPause {
+    //    locationManager = nil;
+    if (nil == locationManager && [CLLocationManager locationServicesEnabled]) {
+        [locationManager stopUpdatingLocation];
+    }
+}
+
+
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

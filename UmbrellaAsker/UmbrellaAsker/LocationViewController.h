@@ -7,7 +7,17 @@
 //
 
 #import "ViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface LocationViewController : ViewController
+@interface LocationViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate> {
+    IBOutlet MKMapView *mapView;
+    CLLocationManager *locationManager;
+}
 
+@property (nonatomic, retain)CLLocationManager *locationManager;
+@property (nonatomic, retain)IBOutlet MKMapView *mapView;
+
+-(void)onResume;
+-(void)onPause;
 @end
