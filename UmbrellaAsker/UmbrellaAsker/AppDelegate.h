@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "LocationViewController.h"
-
+#import "Weather.h"
+#import "NotificationManage.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
 @private LocationViewController *controller;
 }

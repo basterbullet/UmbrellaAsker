@@ -33,6 +33,10 @@
     }
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [locationManager stopUpdatingLocation];
+}
+
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = [locations objectAtIndex:0];
     float latitude  = location.coordinate.latitude;
@@ -40,23 +44,17 @@
     NSLog(@"didUpdateToLocation latitude=%f,longitude=%f",
           latitude,
           longitude);
+    showStatusLabel.text = [NSString stringWithFormat:@"緯度=%f,経度=%f",
+                            latitude,
+                            longitude];
     NSUserDefaults *locationUserDefaults = [NSUserDefaults standardUserDefaults];
     
     [locationUserDefaults setFloat:latitude forKey:@"latitude"];
     [locationUserDefaults setFloat:longitude forKey:@"longitude"];
     
-//    NSString *latitudeStr  = [NSString stringWithFormat:@"%f",latitude];
-//    NSString *longitudeStr = [NSString stringWithFormat:@"%f",longitude];
-//    [locationUserDefaults setObject:latitudeStr forKey:@"latitude"];
-//    [locationUserDefaults setObject:longitudeStr forKey:@"longitude"];
-    
 
-    
-//    [userDefaults setObject:[[[TIME forKey:[[NSNumber numberWithUnsignedInt:TAG] stringValue]];
-
-    //    NSLog(@"%@",[locations lastObject]);
     [mapView setCenterCoordinate:[location coordinate]];
-    //    [mapView setRegion:region];
+
     MKCoordinateRegion cr = mapView.region;
     cr.span.latitudeDelta = 0.5;
     cr.span.longitudeDelta = 0.5;
@@ -65,7 +63,11 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"測位失敗 or 位置情報利用不許可");
+    showStatusLabel.text = @"測位失敗 or 位置情報利用不許可";
+}
+
+- (IBAction)goBackBtnClicked:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)onResume {

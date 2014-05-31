@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Weather.h"
+#import "TimeManager.h"
 @interface NotificationManage : NSObject
+
+-(void)setLocalNotificationWeather:(Weather*)WEATHER Tag:(int)TAG;
+-(void)removeLocalNotificationWeather;
 
 @end

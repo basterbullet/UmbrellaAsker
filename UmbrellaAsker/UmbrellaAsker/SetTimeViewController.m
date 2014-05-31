@@ -29,12 +29,14 @@
     //ラベルに表示する日付・時刻のフォーマットを指定
     NSDateFormatter *df = [[NSDateFormatter alloc]init];
     df.dateFormat = @"HH時mm分";
-    
+    [df setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"JST"]];
     TimeManager *localTimeManager = [[TimeManager alloc]init];
     
     //ラベルに指定したフォーマットで表示
     UIDatePicker *localDatePicker = sender;
     
+    // 呼び出し側(sender)の持つtagによって、処理を変更する。
+    // View上のラベルを更新し、NSUserDefaultsに保存するため専用クラスを呼び出し
     if (localDatePicker.tag == 1){
         showDepartureTimeLabel.text = [df stringFromDate:localDatePicker.date];
         [localTimeManager saveToUserDefaultsTime:showDepartureTimeLabel.text Tag:localDatePicker.tag];
@@ -46,8 +48,11 @@
 }
 
 - (IBAction)testShower:(id)sender {
-    TimeManager *localTimeManager = [[TimeManager alloc]init];
+    /*
+    TimeManagerZ *localTimeManager = [[TimeManager alloc]init];
     NSLog([localTimeManager loadTimeFromUserDefaultsTag:2]);
+     */
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad

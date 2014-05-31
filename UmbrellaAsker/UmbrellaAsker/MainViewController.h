@@ -9,11 +9,17 @@
 //#import "ViewController.h"
 #import <UIKit/UIKit.h>
 #import "Weather.h"
+#import "NotificationManage.h"
 
 @interface MainViewController : UIViewController
 {
-    IBOutlet UIButton *testBtn;
+    Weather *localWeatherManager;
+    __weak IBOutlet UIButton *goTimeViewBtn;
+    __weak IBOutlet UIButton *goLocateViewBtn;
 }
 
-- (IBAction)testBtnClicked:(id)sender;
+- (void)setBackGroundSunny;
+- (void)setBackGroundCloud;
+- (void)setBackGroundRain;
+
 @end
