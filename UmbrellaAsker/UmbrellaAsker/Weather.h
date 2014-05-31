@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface Weather : NSObject
+{
+    NSDictionary *json;
+    int returnValue;
+}
+
+- (void) getWeatherFromLatLon;
+-(NSDictionary *)getWeatherData;
+-(int)getWeatherKind;
 
 @end

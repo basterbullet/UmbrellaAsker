@@ -18,10 +18,99 @@
 
 - (void)viewDidLoad
 {
+    localWeatherManager = [[Weather alloc] init];
+    //int indicateWeather = [localWeatherManager getWeatherKind];
+    int indicateWeather = 10;
+    // getWeatherKindの返り値によって、MainViewControllerの背景などを変更する処理です。
+    NSLog(@"%d",indicateWeather);
+    if ( 2 >= indicateWeather){
+        [self setBackGroundSunny];
+    }else if( 4 >= indicateWeather){
+        [self setBackGroundCloud];
+    }else{
+        [self setBackGroundRain];
+    }
     
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    
+    // ストーリーボード上で配置したUIViewを、最前面に配置し直します。
+    [self.view bringSubviewToFront:goLocateViewBtn];
+    [self.view bringSubviewToFront:goTimeViewBtn];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) setBackGroundSunny
+{
     //ウィンドウサイズの取得
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     NSLog(@"width:%f height:%f",windowSize.size.width,windowSize.size.height);
+    
+    
+    CGRect rectA = CGRectMake(0, 0, 400, 600);
+    UIImageView *imageViews = [[UIImageView alloc]initWithFrame:rectA];
+    imageViews.image = [UIImage imageNamed:@"sunny01.png"];
+    [self.view addSubview:imageViews];
+    
+    // アニメーション用画像を配列にセット
+    NSMutableArray *imageList = [NSMutableArray array];
+    for (NSInteger i = 1; i < 4; i++) {
+        NSString *imagePath = [NSString stringWithFormat:@"sunny%02d.png", i];
+        UIImage *img = [UIImage imageNamed:imagePath];
+        [imageList addObject:img];
+    }
+    
+    // アニメーション用画像をセット
+    imageViews.animationImages = imageList;
+    
+    // アニメーションの速度
+    imageViews.animationDuration = 0.5;
+    
+    // アニメーションのリピート回数
+    imageViews.animationRepeatCount = 0;
+    
+    // アニメーション実行
+    [imageViews startAnimating];
+    
+    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/7, 220, 300);
+    UIImageView *imageViewMan = [[UIImageView alloc]initWithFrame:man];
+    imageViewMan.image = [UIImage imageNamed:@"sunnyman01.png"];
+    [self.view addSubview:imageViewMan];
+    
+    // アニメーション用画像を配列にセット
+    NSMutableArray *imageListMan = [NSMutableArray array];
+    for (NSInteger i = 1; i < 3; i++) {
+        NSString *imagePath = [NSString stringWithFormat:@"sunnyman%02d.png", i];
+        UIImage *img = [UIImage imageNamed:imagePath];
+        [imageListMan addObject:img];
+    }
+    
+    // アニメーション用画像をセット
+    imageViewMan.animationImages = imageListMan;
+    
+    // アニメーションの速度
+    imageViewMan.animationDuration = 1.0;
+    
+    // アニメーションのリピート回数
+    imageViewMan.animationRepeatCount = 0;
+    
+    // アニメーション実行
+    [imageViewMan startAnimating];
+    
+}
+
+
+- (void) setBackGroundRain
+{
+    //ウィンドウサイズの取得
+    CGRect windowSize = [[UIScreen mainScreen] bounds];
+    NSLog(@"width:%f height:%f",windowSize.size.width,windowSize.size.height);
+    
     
     CGRect rectA = CGRectMake(0, 0, 400, 600);
     UIImageView *imageViews = [[UIImageView alloc]initWithFrame:rectA];
@@ -48,48 +137,93 @@
     // アニメーション実行
     [imageViews startAnimating];
     
+    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/7, 220, 300);
+    UIImageView *imageViewMan = [[UIImageView alloc]initWithFrame:man];
+    imageViewMan.image = [UIImage imageNamed:@"rainman01-1.png"];
+    [self.view addSubview:imageViewMan];
     
+    // アニメーション用画像を配列にセット
+    NSMutableArray *imageListMan = [NSMutableArray array];
+    for (NSInteger i = 1; i < 3; i++) {
+        NSString *imagePath = [NSString stringWithFormat:@"rainman%02d-1.png", i];
+        UIImage *img = [UIImage imageNamed:imagePath];
+        [imageListMan addObject:img];
+    }
     
+    // アニメーション用画像をセット
+    imageViewMan.animationImages = imageListMan;
     
-    // UIImageViewの初期化
-    CGRect rect = CGRectMake(windowSize.size.width/10, windowSize.size.height/7, 200, 350); //表示位置 x座標、y座標、横幅、高さ　左上が(0,0)
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:rect];
+    // アニメーションの速度
+    imageViewMan.animationDuration = 1.0;
     
-    // 画像の読み込み
-    imageView.image = [UIImage imageNamed:@"rain.png"];
+    // アニメーションのリピート回数
+    imageViewMan.animationRepeatCount = 0;
     
-    // UIImageViewのインスタンスをビューに追加
-    [self.view addSubview:imageView];
-    
-    
-    
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    // OpenWeatherMapの天気出力APIエンドポイント
-    NSString *kOpenWeatherMap3HoursForecastAPI = @"http://api.openweathermap.org/data/2.5/weather?units=metric&lat=%f&lon=%f";
-    
-    // 適当な緯度経度AF
-    CLLocationDegrees latitude = 39.01;
-    CLLocationDegrees longitude = 141.68;
-    
-    NSString *urlString = [NSString stringWithFormat:kOpenWeatherMap3HoursForecastAPI, latitude, longitude];
-    
-    [[AFHTTPRequestOperationManager manager] GET:urlString
-                                      parameters:nil
-                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                             NSLog(@"JSON: %@", responseObject);
-                                         }
-                                         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                             NSLog(@"Error: %@", error);
-                                         }];
+    // アニメーション実行
+    [imageViewMan startAnimating];
+
 }
 
-- (void)didReceiveMemoryWarning
+- (void) setBackGroundCloud
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //ウィンドウサイズの取得
+    CGRect windowSize = [[UIScreen mainScreen] bounds];
+    NSLog(@"width:%f height:%f",windowSize.size.width,windowSize.size.height);
+    
+    
+    CGRect rectA = CGRectMake(0, 0, 400, 600);
+    UIImageView *imageViews = [[UIImageView alloc]initWithFrame:rectA];
+    imageViews.image = [UIImage imageNamed:@"cloud01.png"];
+    [self.view addSubview:imageViews];
+    
+    // アニメーション用画像を配列にセット
+    NSMutableArray *imageList = [NSMutableArray array];
+    for (NSInteger i = 1; i < 4; i++) {
+        NSString *imagePath = [NSString stringWithFormat:@"cloud%02d.png", i];
+        UIImage *img = [UIImage imageNamed:imagePath];
+        [imageList addObject:img];
+    }
+    
+    // アニメーション用画像をセット
+    imageViews.animationImages = imageList;
+    
+    // アニメーションの速度
+    imageViews.animationDuration = 0.5;
+    
+    // アニメーションのリピート回数
+    imageViews.animationRepeatCount = 0;
+    
+    // アニメーション実行
+    [imageViews startAnimating];
+    
+    
+    
+    
+    
+    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/7, 220, 300);
+    UIImageView *imageViewMan = [[UIImageView alloc]initWithFrame:man];
+    imageViewMan.image = [UIImage imageNamed:@"cloudman01.png"];
+    [self.view addSubview:imageViewMan];
+    
+    // アニメーション用画像を配列にセット
+    NSMutableArray *imageListMan = [NSMutableArray array];
+    for (NSInteger i = 1; i < 3; i++) {
+        NSString *imagePath = [NSString stringWithFormat:@"cloudman%02d.png", i];
+        UIImage *img = [UIImage imageNamed:imagePath];
+        [imageListMan addObject:img];
+    }
+    
+    // アニメーション用画像をセット
+    imageViewMan.animationImages = imageListMan;
+    
+    // アニメーションの速度
+    imageViewMan.animationDuration = 1.0;
+    
+    // アニメーションのリピート回数
+    imageViewMan.animationRepeatCount = 0;
+    
+    // アニメーション実行
+    [imageViewMan startAnimating];
+    
 }
-
 @end

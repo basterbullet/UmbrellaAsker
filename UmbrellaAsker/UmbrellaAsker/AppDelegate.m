@@ -23,6 +23,10 @@
 }
 
 -(void)applicationDidEnterBackground:(UIApplication *)application {
+    Weather *localWeatherManager = [[Weather alloc]init];
+    NotificationManage *localNotificationManager = [[NotificationManage alloc]init];
+    [localNotificationManager setLocalNotificationWeather:localWeatherManager Tag:1];
+    [localNotificationManager setLocalNotificationWeather:localWeatherManager Tag:2];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }

@@ -13,10 +13,14 @@
 @interface LocationViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate> {
     IBOutlet MKMapView *mapView;
     CLLocationManager *locationManager;
+    IBOutlet UILabel *showStatusLabel;
+
 }
 
 @property (nonatomic, retain)CLLocationManager *locationManager;
 @property (nonatomic, retain)IBOutlet MKMapView *mapView;
+
+- (IBAction)goBackBtnClicked:(id)sender;
 
 -(void)onResume;
 -(void)onPause;
