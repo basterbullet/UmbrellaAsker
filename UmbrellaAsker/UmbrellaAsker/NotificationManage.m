@@ -19,7 +19,7 @@
         df.dateFormat = @"HH時mm分";
         [df setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
         TimeManager *localTimeManager = [[TimeManager alloc]init];
-        NSDate *departureDate = [df dateFromString:[localTimeManager loadTimeFromUserDefaultsTag:1]];
+        NSDate *departureDate = [df dateFromString:[localTimeManager loadTimeFromUserDefaultsTag:TAG]];
         // NSCalendar を取得します。
         NSCalendar *calendar = [NSCalendar currentCalendar];
         
@@ -55,8 +55,7 @@
         components.second = settedDate.second;
         
         NSDate *notificationDate = [calendar dateFromComponents:components];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
-
+        NSLog(@"%@",notificationDate);
         UILocalNotification *localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = notificationDate;
         localNotification.alertBody = @"傘、持ちました？";

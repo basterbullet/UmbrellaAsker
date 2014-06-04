@@ -15,6 +15,7 @@
     CLLocationManager *locationManager;
     IBOutlet UILabel *showStatusLabel;
 
+    __weak IBOutlet UIBarButtonItem *goTimerBtn;
 }
 
 @property (nonatomic, retain)CLLocationManager *locationManager;

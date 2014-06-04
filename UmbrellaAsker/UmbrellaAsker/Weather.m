@@ -88,7 +88,8 @@
         }
     }];
 
-    return returnValue;
+    //return returnValue;
+    return 7;
 }
 
 @end

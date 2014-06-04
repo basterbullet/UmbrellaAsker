@@ -15,12 +15,15 @@
 @end
 
 @implementation MainViewController
+@synthesize audio;
 
 - (void)viewDidLoad
 {
+    [audio setDelegate:self];
+    
     localWeatherManager = [[Weather alloc] init];
-    //int indicateWeather = [localWeatherManager getWeatherKind];
-    int indicateWeather = 10;
+    int indicateWeather = [localWeatherManager getWeatherKind];
+    //int indicateWeather = 10;
     // getWeatherKindの返り値によって、MainViewControllerの背景などを変更する処理です。
     NSLog(@"%d",indicateWeather);
     if ( 2 >= indicateWeather){
@@ -47,6 +50,16 @@
 
 - (void) setBackGroundSunny
 {
+    
+    NSString* path = [[NSBundle mainBundle]
+                      pathForResource:@"sunny" ofType:@"wav"];
+    NSURL* url = [NSURL fileURLWithPath:path];
+    audio = [[AVAudioPlayer alloc]
+             initWithContentsOfURL:url error:nil];
+    audio.numberOfLoops = -1;
+    
+    
+    [audio play];
     //ウィンドウサイズの取得
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     NSLog(@"width:%f height:%f",windowSize.size.width,windowSize.size.height);
@@ -77,7 +90,7 @@
     // アニメーション実行
     [imageViews startAnimating];
     
-    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/7, 220, 300);
+    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/3, 220, 300);
     UIImageView *imageViewMan = [[UIImageView alloc]initWithFrame:man];
     imageViewMan.image = [UIImage imageNamed:@"sunnyman01.png"];
     [self.view addSubview:imageViewMan];
@@ -107,6 +120,15 @@
 
 - (void) setBackGroundRain
 {
+    NSString* path = [[NSBundle mainBundle]
+                      pathForResource:@"rain" ofType:@"mp3"];  //rain.mp3ってファイルを読み込んでます。
+    NSURL* url = [NSURL fileURLWithPath:path];
+    audio = [[AVAudioPlayer alloc]
+             initWithContentsOfURL:url error:nil];
+    audio.numberOfLoops = -1;
+    
+    
+    [audio play];
     //ウィンドウサイズの取得
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     NSLog(@"width:%f height:%f",windowSize.size.width,windowSize.size.height);
@@ -137,7 +159,7 @@
     // アニメーション実行
     [imageViews startAnimating];
     
-    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/7, 220, 300);
+    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/3, 220, 300);
     UIImageView *imageViewMan = [[UIImageView alloc]initWithFrame:man];
     imageViewMan.image = [UIImage imageNamed:@"rainman01-1.png"];
     [self.view addSubview:imageViewMan];
@@ -164,8 +186,20 @@
 
 }
 
+
 - (void) setBackGroundCloud
 {
+    NSString* path = [[NSBundle mainBundle]
+                      pathForResource:@"cloud" ofType:@"mp3"];
+    NSURL* url = [NSURL fileURLWithPath:path];
+    audio = [[AVAudioPlayer alloc]
+             initWithContentsOfURL:url error:nil];
+    audio.numberOfLoops = -1;
+    
+    audio.volume = 0.3;
+    
+    [audio play];
+    
     //ウィンドウサイズの取得
     CGRect windowSize = [[UIScreen mainScreen] bounds];
     NSLog(@"width:%f height:%f",windowSize.size.width,windowSize.size.height);
@@ -197,10 +231,7 @@
     [imageViews startAnimating];
     
     
-    
-    
-    
-    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/7, 220, 300);
+    CGRect man = CGRectMake(windowSize.size.width/10, windowSize.size.height/3, 220, 400);
     UIImageView *imageViewMan = [[UIImageView alloc]initWithFrame:man];
     imageViewMan.image = [UIImage imageNamed:@"cloudman01.png"];
     [self.view addSubview:imageViewMan];
@@ -226,4 +257,6 @@
     [imageViewMan startAnimating];
     
 }
+
+
 @end

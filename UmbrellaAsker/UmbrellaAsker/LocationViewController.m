@@ -31,6 +31,15 @@
     }else {
         NSLog(@"Locationservices not available.");
     }
+    //if (self.presentedViewController.restorationIdentifier)
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSLog(@"%d",[[userDefaults objectForKey:@"isFirst"] boolValue]);
+    if ([[userDefaults objectForKey:@"isFirst"] boolValue] != YES)
+    {
+        goTimerBtn.enabled = NO;
+    }
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

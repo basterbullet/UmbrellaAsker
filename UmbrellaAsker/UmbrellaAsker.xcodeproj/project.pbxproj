@@ -10,7 +10,6 @@
 		699557403F41453D8C401E79 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E17A0A79F76744B6AFC2C75B /* libPods.a */; };
 		E064D2FA192DF60F000D6D9D /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D2F9192DF60F000D6D9D /* Weather.m */; };
 		E064D2FD192DFCCF000D6D9D /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D2FC192DFCCF000D6D9D /* LocationViewController.m */; };
-		E064D300192DFCE4000D6D9D /* SetTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D2FF192DFCE4000D6D9D /* SetTimeViewController.m */; };
 		E064D303192DFD07000D6D9D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D302192DFD07000D6D9D /* MainViewController.m */; };
 		E064D306192DFD55000D6D9D /* LocationManage.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D305192DFD55000D6D9D /* LocationManage.m */; };
 		E064D30C192DFD73000D6D9D /* NotificationManage.m in Sources */ = {isa = PBXBuildFile; fileRef = E064D30B192DFD73000D6D9D /* NotificationManage.m */; };
@@ -29,6 +28,14 @@
 		E0F3F7B2192D88C300340159 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0F3F7B0192D88C300340159 /* InfoPlist.strings */; };
 		E0F3F7B4192D88C300340159 /* UmbrellaAskerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F3F7B3192D88C300340159 /* UmbrellaAskerTests.m */; };
 		E4058FC11933502800D10FD2 /* TimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4058FC01933502800D10FD2 /* TimeManager.m */; };
+		E408D0FE193D4C87006DE8A4 /* SetTimeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E408D0FD193D4C87006DE8A4 /* SetTimeTableViewController.m */; };
+		E408D101193E8CEA006DE8A4 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = E408D0FF193E8CEA006DE8A4 /* clock.png */; };
+		E408D102193E8CEA006DE8A4 /* position.png in Resources */ = {isa = PBXBuildFile; fileRef = E408D100193E8CEA006DE8A4 /* position.png */; };
+		E408D107193E8D0A006DE8A4 /* cloud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E408D104193E8D0A006DE8A4 /* cloud.mp3 */; };
+		E408D108193E8D0A006DE8A4 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E408D105193E8D0A006DE8A4 /* rain.mp3 */; };
+		E408D109193E8D0A006DE8A4 /* sunny.wav in Resources */ = {isa = PBXBuildFile; fileRef = E408D106193E8D0A006DE8A4 /* sunny.wav */; };
+		E408D10B193E8FC4006DE8A4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E408D10A193E8FC3006DE8A4 /* AVFoundation.framework */; };
+		E408D10D193EE389006DE8A4 /* welcomeman.png in Resources */ = {isa = PBXBuildFile; fileRef = E408D10C193EE389006DE8A4 /* welcomeman.png */; };
 		E4A7AB391931DF4000AD94A4 /* iconme.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A7AB381931DF4000AD94A4 /* iconme.png */; };
 		E4AD70981935A237004CC2F5 /* cloud01.png in Resources */ = {isa = PBXBuildFile; fileRef = E4AD70861935A237004CC2F5 /* cloud01.png */; };
 		E4AD70991935A237004CC2F5 /* cloud02.png in Resources */ = {isa = PBXBuildFile; fileRef = E4AD70871935A237004CC2F5 /* cloud02.png */; };
@@ -67,8 +74,6 @@
 		E064D2F9192DF60F000D6D9D /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 		E064D2FB192DFCCF000D6D9D /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		E064D2FC192DFCCF000D6D9D /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
-		E064D2FE192DFCE4000D6D9D /* SetTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTimeViewController.h; sourceTree = "<group>"; };
-		E064D2FF192DFCE4000D6D9D /* SetTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTimeViewController.m; sourceTree = "<group>"; };
 		E064D301192DFD07000D6D9D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E064D302192DFD07000D6D9D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E064D304192DFD55000D6D9D /* LocationManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManage.h; sourceTree = "<group>"; };
@@ -97,6 +102,15 @@
 		E17A0A79F76744B6AFC2C75B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4058FBF1933502800D10FD2 /* TimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
 		E4058FC01933502800D10FD2 /* TimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeManager.m; sourceTree = "<group>"; };
+		E408D0FC193D4C87006DE8A4 /* SetTimeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTimeTableViewController.h; sourceTree = "<group>"; };
+		E408D0FD193D4C87006DE8A4 /* SetTimeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTimeTableViewController.m; sourceTree = "<group>"; };
+		E408D0FF193E8CEA006DE8A4 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		E408D100193E8CEA006DE8A4 /* position.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = position.png; sourceTree = "<group>"; };
+		E408D104193E8D0A006DE8A4 /* cloud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cloud.mp3; sourceTree = "<group>"; };
+		E408D105193E8D0A006DE8A4 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
+		E408D106193E8D0A006DE8A4 /* sunny.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sunny.wav; sourceTree = "<group>"; };
+		E408D10A193E8FC3006DE8A4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E408D10C193EE389006DE8A4 /* welcomeman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = welcomeman.png; sourceTree = "<group>"; };
 		E4A7AB381931DF4000AD94A4 /* iconme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconme.png; sourceTree = "<group>"; };
 		E4AD70861935A237004CC2F5 /* cloud01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud01.png; sourceTree = "<group>"; };
 		E4AD70871935A237004CC2F5 /* cloud02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud02.png; sourceTree = "<group>"; };
@@ -124,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E408D10B193E8FC4006DE8A4 /* AVFoundation.framework in Frameworks */,
 				E0F3F78B192D88C300340159 /* CoreGraphics.framework in Frameworks */,
 				E0F3F78D192D88C300340159 /* UIKit.framework in Frameworks */,
 				E0F3F789192D88C300340159 /* Foundation.framework in Frameworks */,
@@ -147,6 +162,7 @@
 		E0F3F77C192D88C200340159 = {
 			isa = PBXGroup;
 			children = (
+				E408D103193E8CFA006DE8A4 /* music */,
 				E4AD70AC1935D121004CC2F5 /* Images */,
 				E46DCA9A193486CA00FAF889 /* picture */,
 				E0F3F78E192D88C300340159 /* UmbrellaAsker */,
@@ -169,6 +185,7 @@
 		E0F3F787192D88C300340159 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E408D10A193E8FC3006DE8A4 /* AVFoundation.framework */,
 				E0F3F788192D88C300340159 /* Foundation.framework */,
 				E0F3F78A192D88C300340159 /* CoreGraphics.framework */,
 				E0F3F78C192D88C300340159 /* UIKit.framework */,
@@ -184,14 +201,14 @@
 				E0F3F797192D88C300340159 /* AppDelegate.h */,
 				E0F3F798192D88C300340159 /* AppDelegate.m */,
 				E0F3F79A192D88C300340159 /* Main.storyboard */,
+				E408D0FC193D4C87006DE8A4 /* SetTimeTableViewController.h */,
+				E408D0FD193D4C87006DE8A4 /* SetTimeTableViewController.m */,
 				E064D304192DFD55000D6D9D /* LocationManage.h */,
 				E064D305192DFD55000D6D9D /* LocationManage.m */,
 				E064D30A192DFD73000D6D9D /* NotificationManage.h */,
 				E064D30B192DFD73000D6D9D /* NotificationManage.m */,
 				E064D2FB192DFCCF000D6D9D /* LocationViewController.h */,
 				E064D2FC192DFCCF000D6D9D /* LocationViewController.m */,
-				E064D2FE192DFCE4000D6D9D /* SetTimeViewController.h */,
-				E064D2FF192DFCE4000D6D9D /* SetTimeViewController.m */,
 				E4058FBF1933502800D10FD2 /* TimeManager.h */,
 				E4058FC01933502800D10FD2 /* TimeManager.m */,
 				E064D301192DFD07000D6D9D /* MainViewController.h */,
@@ -236,6 +253,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E408D103193E8CFA006DE8A4 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				E408D104193E8D0A006DE8A4 /* cloud.mp3 */,
+				E408D105193E8D0A006DE8A4 /* rain.mp3 */,
+				E408D106193E8D0A006DE8A4 /* sunny.wav */,
+			);
+			name = music;
+			sourceTree = "<group>";
+		};
 		E46DCA9A193486CA00FAF889 /* picture */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +270,8 @@
 				E4AD70871935A237004CC2F5 /* cloud02.png */,
 				E4AD70881935A237004CC2F5 /* cloud03.png */,
 				E4AD70891935A237004CC2F5 /* cloudman01.png */,
+				E408D0FF193E8CEA006DE8A4 /* clock.png */,
+				E408D100193E8CEA006DE8A4 /* position.png */,
 				E4AD70AA1935CFD2004CC2F5 /* positionman.png */,
 				E4AD708A1935A237004CC2F5 /* cloudman02.png */,
 				E4AD708B1935A237004CC2F5 /* Default.png */,
@@ -253,6 +282,7 @@
 				E4AD70911935A237004CC2F5 /* rainman01-1.png */,
 				E4AD70921935A237004CC2F5 /* rainman02-1.png */,
 				E4AD70931935A237004CC2F5 /* sunny01.png */,
+				E408D10C193EE389006DE8A4 /* welcomeman.png */,
 				E4AD70941935A237004CC2F5 /* sunny02.png */,
 				E4AD70951935A237004CC2F5 /* sunny03.png */,
 				E4AD70961935A237004CC2F5 /* sunnyman01.png */,
@@ -347,7 +377,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E408D101193E8CEA006DE8A4 /* clock.png in Resources */,
 				E4AD709C1935A237004CC2F5 /* cloudman02.png in Resources */,
+				E408D102193E8CEA006DE8A4 /* position.png in Resources */,
 				E4AD70981935A237004CC2F5 /* cloud01.png in Resources */,
 				E4AD70A91935A237004CC2F5 /* sunnyman02.png in Resources */,
 				E4AD70A61935A237004CC2F5 /* sunny02.png in Resources */,
@@ -357,6 +389,7 @@
 				E0F3F793192D88C300340159 /* InfoPlist.strings in Resources */,
 				E4AD70A01935A237004CC2F5 /* rain01.png in Resources */,
 				E4AD70AE1935D145004CC2F5 /* Icon.png in Resources */,
+				E408D10D193EE389006DE8A4 /* welcomeman.png in Resources */,
 				E4AD709E1935A237004CC2F5 /* Default@2x.png in Resources */,
 				E4AD70A81935A237004CC2F5 /* sunnyman01.png in Resources */,
 				E4AD70A31935A237004CC2F5 /* rainman01-1.png in Resources */,
@@ -365,10 +398,13 @@
 				E4AD70A21935A237004CC2F5 /* rain03.png in Resources */,
 				E4AD70A41935A237004CC2F5 /* rainman02-1.png in Resources */,
 				E0F3F79C192D88C300340159 /* Main.storyboard in Resources */,
+				E408D108193E8D0A006DE8A4 /* rain.mp3 in Resources */,
+				E408D107193E8D0A006DE8A4 /* cloud.mp3 in Resources */,
 				E4AD70A51935A237004CC2F5 /* sunny01.png in Resources */,
 				E4AD70A11935A237004CC2F5 /* rain02.png in Resources */,
 				E4AD70991935A237004CC2F5 /* cloud02.png in Resources */,
 				E4AD70A71935A237004CC2F5 /* sunny03.png in Resources */,
+				E408D109193E8D0A006DE8A4 /* sunny.wav in Resources */,
 				E4AD709D1935A237004CC2F5 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,11 +459,11 @@
 			files = (
 				E064D2FA192DF60F000D6D9D /* Weather.m in Sources */,
 				E0F3F79F192D88C300340159 /* ViewController.m in Sources */,
-				E064D300192DFCE4000D6D9D /* SetTimeViewController.m in Sources */,
 				E0F3F799192D88C300340159 /* AppDelegate.m in Sources */,
 				E064D303192DFD07000D6D9D /* MainViewController.m in Sources */,
 				E064D306192DFD55000D6D9D /* LocationManage.m in Sources */,
 				E0F3F795192D88C300340159 /* main.m in Sources */,
+				E408D0FE193D4C87006DE8A4 /* SetTimeTableViewController.m in Sources */,
 				E4058FC11933502800D10FD2 /* TimeManager.m in Sources */,
 				E064D2FD192DFCCF000D6D9D /* LocationViewController.m in Sources */,
 				E064D30C192DFD73000D6D9D /* NotificationManage.m in Sources */,

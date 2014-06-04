@@ -20,6 +20,22 @@
     [super viewDidLoad];
 }
 
+- (void) viewDidAppear:(BOOL)animated{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    if ([userDefaults objectForKey:@"isFirst"] != nil)
+    {
+        MainViewController *moveMainView = [self.storyboard instantiateViewControllerWithIdentifier:@"MainView"];
+        [self presentViewController:moveMainView animated:YES completion:nil];
+        
+        NSLog(@"yahoo");
+    }
+    [userDefaults setBool:YES forKey:@"isFirst"];
+    NSLog(@"%d",[[userDefaults objectForKey:@"isFirst"] boolValue]);
+
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

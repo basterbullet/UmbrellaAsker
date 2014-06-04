@@ -25,6 +25,9 @@
 -(void)applicationDidEnterBackground:(UIApplication *)application {
     Weather *localWeatherManager = [[Weather alloc]init];
     NotificationManage *localNotificationManager = [[NotificationManage alloc]init];
+    
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
     [localNotificationManager setLocalNotificationWeather:localWeatherManager Tag:1];
     [localNotificationManager setLocalNotificationWeather:localWeatherManager Tag:2];
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
